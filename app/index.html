@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz</title>
+	<meta charset="utf-8">
+	<link rel='stylesheet' type='text/css' href='css/styles.css'>
+</head>
+<body>
+	<!-- http://javascriptissexy.com/how-to-learn-javascript-properly/ -->
+	<div class="header">
+		<h1>Quiz</h1>
+		<h4>A project by <a href="http://www.johntg.com">johntg.com</a></h4>
+	</div>
+	<div class="pre-quiz">
+		<h2 id="quiz-summary">Blah blah blah this is what this quiz is about, blah blah blah.</h2>
+		<button id="begin-quiz">Begin Quiz</button>
+	</div>
+	<div class="quiz-content hide">
+		<h2>Question <span id="question-number"></span>:</h2></h2>
+		<h2 id="question-text">
+		<ul id="choices">
+			<li><input type="radio" name="chooseone" value="choice1"><label for="choice1"> Choice 1</label><li>
+			<li><input type="radio" name="chooseone" value="choice2"><label for="choice2"> Choice 2</label></li>
+			<li><input type="radio" name="chooseone" value="choice3"><label for="choice3"> Choice 3</label></li>
+			<li><input type="radio" name="chooseone" value="choice4"><label for="choice4"> Choice 4</label></li>
+		</ul>
+		<input id="submit-answer" type="submit" value="Submit">
+	</div>
+	<div class="footer">
+
+	</div>
+
+	<!-- JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
