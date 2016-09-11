@@ -55,7 +55,8 @@ ul {
   .pre-quiz #quiz-summary {
     margin: 0 auto;
     padding: 2em 2em;
-    width: 70%; }
+    width: 70%;
+    font-family: "Oxygen", arial; }
 
 #choices {
   list-style-type: none;
