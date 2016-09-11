@@ -11,7 +11,7 @@ var maxQuestions = 3;
 // All questions are stored here
 var allQuestions = [
 	{question: "Is this quiz working?", choices: ["yes", "no", "maybe so"], correctAnswer: 0},
-	{question: "Am I learning anything", choices: ["yes, a fuckton", "no", "there's a possibility"], correctAnswer: 0},
+	{question: "Am I learning anything", choices: ["yes, quite a bit", "no", "there's a possibility"], correctAnswer: 0},
 	{question: "will this be the last question?", choices: ["Of course", "no", "It better be"], correctAnswer: 2}
 ];
 
@@ -31,6 +31,7 @@ $("#begin-quiz").click(function() {
 // On submit button click, update 'count', show next Q, or end quiz and show result
 $("#submitQ").click(function() {
 	if (count <= maxQuestions) {
+		$(choices).html("");
 		count++;
 		displayQuestion(count);
 	} else {
@@ -43,10 +44,9 @@ function displayQuestion(qNum) {
 	// Set question number and question text
 	$(questionNumber).text(qNum + 1);
 	$(questionText).text(allQuestions[qNum].question);
-
 	// Loop through choices in question object to display them as 'li' elements
 	for (var i = 0; i < allQuestions[qNum].choices.length; i++) {
-		$(choices).text("TEST");
+		$(choices).append("<ul><li><input type='radio'>" + allQuestions[qNum].choices[i] + "</li></ul>");
 	}
 
 }
