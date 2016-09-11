@@ -25,7 +25,7 @@ var allQuestions = [
 $("#begin-quiz").click(function() {
 	$(".pre-quiz").addClass("hide");
 	$(".quiz-content").removeClass("hide");
-	displayQuestion(0)
+	displayQuestion(count)
 });
 
 // On submit button click, update 'count', show next Q, or end quiz and show result
@@ -46,8 +46,7 @@ function displayQuestion(qNum) {
 
 	// Loop through choices in question object to display them as 'li' elements
 	for (var i = 0; i < allQuestions[qNum].choices.length; i++) {
-		$(choices).text("IT WORKS!");
-		console.log("hmm..");
+		$(choices).text("TEST");
 	}
 
 }
