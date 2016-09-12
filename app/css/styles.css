@@ -105,4 +105,10 @@ ul {
   position: relative;
   top: 1px; }
 
+/* quiz-results */
+.quiz-results {
+  text-align: center; }
+  .quiz-results h2 {
+    margin-top: 3em; }
+
 /* Footer */
