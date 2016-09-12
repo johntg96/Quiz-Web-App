@@ -15,11 +15,9 @@ var allQuestions = [
 	{question: "will this be the last question?", choices: ["Of course", "no", "It better be"], correctAnswer: 2}
 ];
 
-// testing stuff
-//var howManyChoices = allQuestions[questionCounter].choices.length;
-//alert(howManyChoices);
-//alert(allQuestions[0].question);
-// end testing stuff
+// The users answers are stored here
+var userAnswers = [];
+
 
 // Remove quiz summary, and display the first question
 $("#begin-quiz").click(function() {
@@ -30,12 +28,29 @@ $("#begin-quiz").click(function() {
 
 // On submit button click, update 'count', show next Q, or end quiz and show result
 $("#submitQ").click(function() {
-	if (count <= maxQuestions) {
-		$(choices).html("");
-		count++;
-		displayQuestion(count);
+	if ($('form input[type=radio]:checked').val() == allQuestions[count].correctAnswer) {
+		userAnswers.push("correct");
+		console.log(userAnswers); // for testing
+
+		if (count <= maxQuestions) {
+			$(choices).html("");
+			count++;
+			displayQuestion(count);
+		} else {
+			totalQuiz();
+		}
+
 	} else {
-		totalQuiz();
+		userAnswers.push("wrong");
+		console.log(userAnswers); // for testing
+
+		if (count <= maxQuestions) {
+			$(choices).html("");
+			count++;
+			displayQuestion(count);
+		} else {
+			totalQuiz();
+		}
 	}
 });
 
@@ -44,9 +59,9 @@ function displayQuestion(qNum) {
 	// Set question number and question text
 	$(questionNumber).text(qNum + 1);
 	$(questionText).text(allQuestions[qNum].question);
-	// Loop through choices in question object to display them as 'li' elements
+	// Loop through choices in question object to display append them to the form element
 	for (var i = 0; i < allQuestions[qNum].choices.length; i++) {
-		$(choices).append("<ul><li><input type='radio'>" + allQuestions[qNum].choices[i] + "</li></ul>");
+		$(choices).append("<input type='radio' name='chooseone' value='" + i + "'><label for='" + i + "'>" + allQuestions[qNum].choices[i] + "</label><br/>");
 	}
 
 }
