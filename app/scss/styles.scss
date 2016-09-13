@@ -81,6 +81,7 @@ ul {
 		padding: 2em 2em;
 		width: 70%;
 		font-family: $textfont;
+		font-weight: 500;
 	}
 }
 
@@ -153,6 +154,10 @@ ul {
 
 	h2 {
 		margin-top: 3em;
+	}
+
+	#final-score {
+		font-weight: 400;
 	}
 }
 

@@ -15,7 +15,6 @@ var allQuestions = [
 ];
 
 var maxQuestions = allQuestions.length;
-console.log(maxQuestions); // for testing
 
 // The users answers are stored here
 var userAnswers = [];
@@ -81,14 +80,26 @@ function totalQuiz() {
 		}
 	}
 
-	$(".quiz-content").addClass("hide");
-	$(".quiz-results").removeClass("hide");
-	$("#exit-btn").click(function() {
+	var scorePercent = Math.floor((numCorrectAnswers / maxQuestions) * 100);
+
+	$('#final-score').text(numCorrectAnswers + " out of " + maxQuestions);
+	$('#score-percent').text(scorePercent + "%");
+
+	$('.quiz-content').addClass("hide");
+	$('.quiz-results').removeClass("hide");
+	$('#exit-quiz').click(function() {
 		resetQuiz();
 	});
 }
 
 // Resets all values to default
 function resetQuiz() {
-
+	count = 0;
+	userAnswers = [];
+	$(choices).html("");
+	$('#final-score').text("");
+	$('#score-percent').text("");
+	$('#submitQ').prop("disabled", false);
+	$('.quiz-results').addClass("hide");
+	$('.pre-quiz').removeClass("hide");
 }

@@ -51,7 +51,8 @@ ul {
     margin: 0 auto;
     padding: 2em 2em;
     width: 70%;
-    font-family: "Oxygen", arial; }
+    font-family: "Oxygen", arial;
+    font-weight: 500; }
 
 .quiz-content {
   margin: 0 auto;
@@ -110,5 +111,7 @@ ul {
   text-align: center; }
   .quiz-results h2 {
     margin-top: 3em; }
+  .quiz-results #final-score {
+    font-weight: 400; }
 
 /* Footer */
